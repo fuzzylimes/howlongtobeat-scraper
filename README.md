@@ -33,6 +33,15 @@ Run the following from the command line: `python3 scraper.py <game title>`
 Example: `python3 scraper.py Final Fantasy`
 
 #### Imported
+##### Installed
+If you've installed the module using setup.py, you can import by using the following:
+```python
+from hltbScraper import HLTB
+```
+
+Then to use in your script, simply use `HLTB(game_name)` to get a dictionary with the query results.
+
+##### Copied file
 * Import scraper.py into your file
 * Use scraper.HLTB(game_title) to get game data
    * This will return the python dictionary detailed above

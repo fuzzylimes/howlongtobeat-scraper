@@ -1,0 +1,4 @@
+*.pyc
+dist
+*.egg-info
+_pycache_
