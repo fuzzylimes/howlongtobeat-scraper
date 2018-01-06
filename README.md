@@ -2,6 +2,17 @@ This is a small helper program that simplifies scraping game information from th
 
 I leave it up to the site to do best effort on game matching. If a game cannot be found, a dictionary with an `error` key pair will be returned.
 
+### Installation
+Two simple ways to use this package as is:
+
+#### Install via pip
+Run the following command to install to your environment (includes dependencies):
+`pip install git+git://github.com/fuzzylimes/howlongtobeat-scraper.git`
+
+#### Install via setup.py
+* Clone the repo from github
+* Navigate into the folder and run `pip install .`
+
 ### Usage
 The script can be used two different ways: standalone and from within another script. The user will provide the title of the game, and the module will return a dictionary with the following details:
 
