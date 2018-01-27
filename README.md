@@ -53,8 +53,18 @@ from hltbScraper import HLTB
 Then to use in your script, simply use `HLTB(game_name)` to get a dictionary with the query results.
 
 ##### Copied file
-* Import scraper.py into your file
+* Import scraper.py into your project
 * Use scraper.HLTB(game_title) to get game data
    * This will return the python dictionary detailed above
 
 Example: `result = scraper.HLTB('Final Fantasy')`
+
+#### Handling Exceptions
+If the searched game cannot be found, an `Exception` will be raised with an error message. Here's an example of how to setup up your search to utlize this:
+
+```python
+try:
+    HLTB("asdfasdf")
+except Exception as e:
+    print(e)
+```
