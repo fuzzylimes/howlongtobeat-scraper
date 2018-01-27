@@ -8,16 +8,19 @@ HLTB_PRE = 'https://howlongtobeat.com/'
 def HLTB(title):
     try:
         times, title, url = FindGame(title)
+        return {title: {'url': url, 'Main Story': times[0][1], 'Main + Extra': times[1][1],'Completionist': times[2][1]}}
     except:
-        return {'error': "Game not found."}
-    return {title: {'url': url, 'Main Story': times[0][1], 'Main + Extra': times[1][1],'Completionist': times[2][1]}}
+        raise
 
 #######################################
 # Helpers
 #######################################
 def FindGame(title):
     soup = BeautifulSoup(GetPage(title), 'lxml')
-    page = soup.findAll("div", class_="search_list_details")[0]
+    try:
+        page = soup.findAll("div", class_="search_list_details")[0]
+    except IndexError as e:
+        raise Exception('{} Not Found'.format(title))
     tmp = page.find("a", title=True, href=True)
     title,url = tmp['title'], HLTB_PRE + tmp['href']
     scrape = page.findAll("div", class_="search_list_tidbit")
@@ -27,7 +30,7 @@ def FindGame(title):
         (scrape[4].text,"{}Hrs".format(scrape[5].text.split(' ')[0]))
     ]
     return result, title, url
-
+    
 def GetPage(title):
     data={'queryString':title}
     return requests.post(HLTB_URL,data=data).text
