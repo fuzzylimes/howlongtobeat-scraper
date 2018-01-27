@@ -14,12 +14,10 @@ class TestScraper(TestCase):
         self.assertTrue('Completionist' in a[title].keys())
 
     def test_HLTB_not_found(self):
-        title = 'asfkjasf'
-        a = hltb.HLTB(title)
-        self.assertTrue(isinstance(a, dict))
-        self.assertTrue('error' in a.keys())
+        with self.assertRaises(Exception):
+            title = 'asfkjasf'
+            hltb.HLTB(title)
 
     def test_get_page(self):
         a = hltb.GetPage('Final Fantasy')
         self.assertTrue(isinstance(a, str))
-
