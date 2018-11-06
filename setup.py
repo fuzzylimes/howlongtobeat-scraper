@@ -10,6 +10,6 @@ setup(name='hltb_time_scraper',
       install_requires=[
           'beautifulsoup4==4.6.0',
           'lxml==4.1.1',
-          'requests==2.18.4'
+          'requests==2.20.0'
       ],
       zip_safe=False)
