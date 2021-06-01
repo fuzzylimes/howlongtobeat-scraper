@@ -15,6 +15,6 @@ setup(name='hltb_time_scraper',
           'lxml==4.1.1',
           'pyOpenSSL==19.1.0',
           'requests==2.20.0',
-          'urllib3==1.24.2'
+          'urllib3==1.26.5'
       ],
       zip_safe=False)
