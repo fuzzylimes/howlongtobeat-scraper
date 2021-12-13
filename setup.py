@@ -12,7 +12,7 @@ setup(name='hltb_time_scraper',
           'certifi==2017.11.5',
           'chardet==3.0.4',
           'idna==2.6',
-          'lxml==4.1.1',
+          'lxml==4.6.5',
           'pyOpenSSL==19.1.0',
           'requests==2.20.0',
           'urllib3==1.24.2'
