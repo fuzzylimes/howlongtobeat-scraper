@@ -9,7 +9,7 @@ setup(name='hltb_time_scraper',
       packages=['hltbScraper'],
       install_requires=[
           'beautifulsoup4==4.6.0',
-          'certifi==2017.11.5',
+          'certifi==2022.12.7',
           'chardet==3.0.4',
           'idna==2.6',
           'lxml==4.1.1',
